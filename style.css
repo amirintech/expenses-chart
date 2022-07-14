@@ -1,0 +1,234 @@
+:root {
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+  --border-radius: 20px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 58%;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--cream);
+}
+
+main {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section-divider {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 3px solid var(--cream);
+  border-radius: var(--border-radius);
+}
+
+.chart {
+  flex-basis: 540px;
+}
+
+.container {
+  padding: 3rem;
+  margin: 0 auto;
+}
+
+/* chart header */
+.chart__header {
+  background-color: var(--soft-red);
+  border-radius: var(--border-radius);
+  margin-bottom: 1.8rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart__balance-title {
+  color: var(--very-pale-orange);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.chart__balance {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 375px) {
+  .chart__balance-title {
+    font-size: 1.8rem;
+  }
+
+  .chart__balance {
+    font-size: 3.2rem;
+  }
+}
+
+/* chart body */
+.chart__body {
+  background-color: var(--very-pale-orange);
+  border-radius: var(--border-radius);
+}
+
+.chart__body-title {
+  font-size: 2.4rem;
+}
+
+.chart__columns {
+  margin-top: 2rem;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.column {
+  flex-basis: 33px;
+  background-color: var(--soft-red);
+  padding: 60px 0;
+  border-radius: 6px;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+  --expense-day: "Hey";
+}
+
+.column:hover {
+  background-color: #ff9b86;
+}
+
+.column--current {
+  background-color: var(--cyan);
+}
+
+.column--current:hover {
+  background-color: #b4e0e5;
+}
+
+.column::before,
+.column::after {
+  position: absolute;
+  text-align: center;
+  display: inline-block;
+  z-index: 1;
+}
+
+.column::before {
+  /* to be set from the parent attribute */
+  content: attr(column-value);
+
+  background-color: var(--dark-brown);
+  border-radius: 6px;
+  font-weight: 700;
+  padding: 2px 8px;
+  color: var(--very-pale-orange);
+  top: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.column:hover::before {
+  opacity: 1;
+}
+
+.column::after {
+  /* to be set from the parent attribute */
+  content: attr(column-title);
+  text-transform: capitalize;
+  bottom: -3rem;
+  color: var(--medium-brown);
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 375px) {
+  .column {
+    flex-basis: 50px;
+  }
+  .column::after {
+    font-size: 1.5rem;
+  }
+}
+
+/* chart footer */
+.chart__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 1.5rem;
+}
+
+.chart__footer-title {
+  color: var(--medium-brown);
+}
+
+.current-month-total,
+.change-rate {
+  color: var(--dark-brown);
+  display: block;
+  font-weight: 700;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.current-month-total {
+  font-size: 3rem;
+}
+
+@media screen and (min-width: 375px) {
+  .chart__footer {
+    font-size: inherit;
+  }
+
+  .current-month-total {
+    font-size: 4.8rem;
+    line-height: 1.1;
+  }
+}
+
+/* attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

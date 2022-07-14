@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Expenses chart component</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JavaScript -->
+    <script src="data.json"></script>
+    <script src="index.js" type="module"></script>
+  </head>
+  <body>
+    <main>
+      <article class="chart">
+        <header class="chart__header container">
+          <p class="chart__balance-title">
+            My balance <span class="chart__balance">$921.48</span>
+          </p>
+          <img src="./images/logo.svg" alt="logo" class="logo" />
+        </header>
+        <div class="chart__body container">
+          <h2 class="chart__title">Spending - Last 7 days</h2>
+
+          <div class="chart__columns" id="columns-container"></div>
+
+          <hr class="section-divider" />
+
+          <footer class="chart__footer">
+            <p class="chart__footer-title">
+              Total this month <span class="current-month-total">$478.33</span>
+            </p>
+            <p class="chart__footer-title">
+              <span class="change-rate">+2.4%</span>
+              from last month
+            </p>
+          </footer>
+        </div>
+      </article>
+    </main>
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+</html>
