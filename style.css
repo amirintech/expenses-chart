@@ -191,6 +191,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 1rem;
   font-size: 1.5rem;
 }
 
@@ -210,6 +211,16 @@ img {
 
 .current-month-total {
   font-size: 3rem;
+}
+
+.chart__footer-title:nth-child(2) {
+  justify-self: end;
+  text-align: right;
+}
+
+.chart__footer-title:nth-child(2) span {
+  width: 100%;
+  display: inline-block;
 }
 
 @media screen and (min-width: 375px) {

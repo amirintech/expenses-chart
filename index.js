@@ -13,7 +13,7 @@ const initializeColumns = async () => {
     const expenseColumn = document.createElement("div");
     expenseColumn.classList.add("column");
 
-    const factor = 2; // Just for making the column looks taller
+    const factor = 1.5; // Just for making the column looks taller
     const { day, amount } = expense;
     expenseColumn.style = `padding: ${amount * factor}px 0`;
 
